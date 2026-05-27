@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mealrecipeapp/data/dummy_data.dart';
+import 'package:mealrecipeapp/widgets/category_grid_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
@@ -22,23 +23,11 @@ class CategoriesScreen extends StatelessWidget {
           ),
           children: [
             for(final category in dummyCategories)
-              Container(
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  color: category.color,
-                ),
-                child: Text(
-                  category.title,
-                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    color: Colors.white,
-                  ),
-                ),
-              )
+              CategoryGridItem(category: category),
 
           ],
 
-        )
+        ),
 
 
     );
