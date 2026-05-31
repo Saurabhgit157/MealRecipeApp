@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mealrecipeapp/models/meal.dart';
+import 'package:mealrecipeapp/widgets/meal_item.dart';
 
 class MealsScreen extends StatelessWidget{
   final List<Meal> meals;
@@ -29,11 +30,10 @@ class MealsScreen extends StatelessWidget{
           itemCount: meals.length,
           itemBuilder : (context,index)
             {
-              return ListTile(
-                title : Text(
-                  meals[index].title,
-                  style: const TextStyle(color : Colors.white),
-                ),
+              return MealItem(
+                meal : meals[index],
+
+
               );
             }
         );
